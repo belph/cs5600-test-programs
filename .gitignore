@@ -1,0 +1,13 @@
+.dmtcp*
+\#*
+.\#*
+*.o
+run-*
+futex-lock/futex-lock
+simple-ns/simple-ns
+simple-ns/join-ns
+test-basic/test-basic
+test-fork/test-fork
+test-simple-pthread/test-simple-pthread
+t-test1/t-test1
+*.org
