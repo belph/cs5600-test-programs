@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
   }
   fprintf(stderr, "pid\n");
   
-  //execl("/bin/zsh", "/bin/zsh", NULL);
+  execl("/bin/zsh", "/bin/zsh", NULL);
   // int sysctl (int *name, int nlen, void *oldval,
   //            size_t *oldlenp, void *newval, size_t newlen);
 

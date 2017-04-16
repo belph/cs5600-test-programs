@@ -6,8 +6,12 @@ run-*
 futex-lock/futex-lock
 simple-ns/simple-ns
 simple-ns/join-ns
+simple-ns/open-shell
 test-basic/test-basic
 test-fork/test-fork
 test-simple-pthread/test-simple-pthread
+futex-lock/test-futex-lock
+t-test1/t-test
 t-test1/t-test1
 *.org
+ckpt*
