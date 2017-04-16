@@ -13,7 +13,7 @@ PROG=$(readlink $1 || echo $1)
 shift
 set -x
 
-dmtcp_launch --disable-all-plugins $PROG $@ &
+dmtcp_launch $PROG $@ &
 sleep $TIME
 dmtcp_command --checkpoint
 kill -15 $!
