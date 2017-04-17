@@ -6,12 +6,17 @@
 
 pthread_mutex_t mtx;
 
+int getpid() {
+  return syscall(SYS_getpid);
+}
+
 int gettid() {
   return syscall(SYS_gettid);
 }
 
 void *unlock(void *dontcare) {
-  sleep(30);
+  printf("pre-sleep: %d; %d\n", getpid(), gettid());
+  sleep(5);
   int err = pthread_mutex_unlock(&mtx);
   printf("err is: %d; %d; %d\n", err, getpid(), gettid());
   if (err) {
@@ -27,7 +32,9 @@ int main() {
   pthread_mutex_init(&mtx, &attr);
   pthread_t thread;
   pthread_create(&thread, NULL, unlock, NULL);
+  fprintf(stderr, "parent: %d; %d\n", getpid(), gettid());
   fprintf(stderr, "pre\n");
   pthread_mutex_lock(&mtx);
+  sleep(1);
   unlock(NULL);
 }
