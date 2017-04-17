@@ -34,6 +34,11 @@ clean:
 	$(MAKE) -C test-basic clean
 	rm -f ./run-*
 
+.PHONY: clean-all
+clean-all: clean
+	rm -f dmtcp_restart*.sh
+	rm -f ckpt_*.dmtcp
+
 .PHONY: dist
 dist:
 	(cd .. && tar czf cs-5600-project.tar.gz cs-5600-project)
